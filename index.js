@@ -7,7 +7,6 @@ import {
   Image,
   Text,
   Animated,
-  StyleSheet,
   Dimensions,
   Platform
 } from 'react-native';
