@@ -1,6 +1,7 @@
 # React Native Tab
 
-[![Version][version-badge]][package]
+<!-- [![NPM Version](https://badge.fury.io/js/esta.svg?style=flat)](https://npmjs.org/package/@feri/react-native-tab) -->
+[![NPM Version](https://badge.fury.io/js/esta.svg?style=flat)](0.1.1)
 
 Tab Component for React-Native (android & ios)
 
