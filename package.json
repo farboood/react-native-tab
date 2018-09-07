@@ -1,14 +1,15 @@
 {
   "name": "@feri/react-native-tab",
-  "version": "0.0.2",
-  "description": "tab for react native",
+  "version": "0.0.3",
+  "description": "React Native Tab Component",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "react": ">= 16.x",
-    "react-native": ">= 0.50.x"
+    "react": "*",
+    "react-native": "*",
+    "prop-types": "*"
   },
   "author": {
     "name": "feri",

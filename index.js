@@ -310,4 +310,13 @@ class Tab extends Component {
   }
 }
 
+Tab.propTypes = {
+  mode: PropTypes.oneOf(['normal', 'scroll']),
+  reverse: PropTypes.bool
+};
+
+Tab.defaultProps = {
+  mode: 'scroll'
+};
+
 export default Tab;
