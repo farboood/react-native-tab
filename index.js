@@ -10,6 +10,7 @@ import {
   Dimensions,
   Platform
 } from 'react-native';
+import PropTypes from 'prop-types';
 import {
   styles,
   stylesNormal,
@@ -143,7 +144,7 @@ class Tab extends Component {
         headerItems.push(
           <TouchableWithoutFeedback
             key={i}
-            onPress={() => { this.onTabButtonPress(i) }}
+            onPress={() => { this.onHeaderItemPress(i) }}
           >
             <Animated.View
               style={[stylesNormal.headerItem, { opacity }]}
