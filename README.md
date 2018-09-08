@@ -84,8 +84,11 @@ mode="normal"
 
 ### Props
 
-| Prop          | Values           | Action                                   |
-| ------------- |:----------------:| ----------------------------------------:|
-| style         | style object     | extra styles for tab component container |
-| mode          | normal, scroll   | make tab buttons static or scrollable    |
-| reverse       | true, false      | direction of tab Buttons and Views       |
+| Prop            | Values           | Action                                   |
+| --------------- |:----------------:| ----------------------------------------:|
+| style           | style object     | extra styles for tab component container |
+| tabBarStyle     | style object     | extra styles for tab bar                 |
+| buttonTextStyle | style object     | extra styles for tab buttons text        |
+| rollStyle       | style object     | extra styles for tab buttons roll        |
+| mode            | normal, scroll   | make tab buttons static or scrollable    |
+| reverse         | true, false      | direction of tab Buttons and Views       |

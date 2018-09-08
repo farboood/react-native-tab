@@ -149,7 +149,7 @@ class Tab extends Component {
             <Animated.View
               style={[stylesNormal.headerItem, { opacity }]}
             >
-              <Text style={stylesNormal.headerItemText}>{this.props.children[i].props.name}</Text>
+              <Text style={[stylesNormal.headerItemText, this.props.buttonTextStyle]}>{this.props.children[i].props.name}</Text>
             </Animated.View>
           </TouchableWithoutFeedback>
         );
@@ -177,11 +177,11 @@ class Tab extends Component {
         stylesCarousel = { flexDirection: 'row' };
       }
       headerItems.push(
-        <Animated.View key={`${this.props.children.length}`} style={[stylesNormal.headerRoll, stylesRoll]} />
+        <Animated.View key={`${this.props.children.length}`} style={[stylesNormal.headerRoll, stylesRoll, this.props.rollStyle]} />
       );
 
       return (
-        <View style={[stylesNormal.headerCarousel, stylesCarousel]}>
+        <View style={[stylesNormal.headerCarousel, stylesCarousel, this.props.tabBarStyle]}>
           {headerItems}
         </View>
       );
@@ -207,7 +207,7 @@ class Tab extends Component {
             <Animated.View
               style={[stylesScroll.headerCarouselItem, { opacity }]}
             >
-              <Text style={stylesScroll.headerCarouselItemText}>{this.props.children[i].props.name}</Text>
+              <Text style={[stylesScroll.headerCarouselItemText, this.props.buttonTextStyle]}>{this.props.children[i].props.name}</Text>
             </Animated.View>
           </TouchableWithoutFeedback>
         );
@@ -226,7 +226,7 @@ class Tab extends Component {
       });
 
       return (
-        <Animated.View style={[stylesScroll.headerCarousel, stylesCarousel, { marginLeft }]}>
+        <Animated.View style={[stylesScroll.headerCarousel, stylesCarousel, { marginLeft }, this.props.tabBarStyle]}>
           {headerItems}
         </Animated.View>
       );
