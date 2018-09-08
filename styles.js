@@ -1,4 +1,8 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import {
+  StyleSheet,
+  Dimensions,
+  Platform
+} from 'react-native';
 
 const dw = Dimensions.get('window').width;
 const dh = Dimensions.get('window').height;
@@ -6,7 +10,8 @@ const dh = Dimensions.get('window').height;
 export const styles = StyleSheet.create({
   root: {
     flex: 1,
-    flexDirection: 'column'
+    flexDirection: 'column',
+    width: Platform.OS === 'android' ? dw : 'auto'
     // marginBottom: 50
   },
   header: {
