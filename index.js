@@ -8,7 +8,8 @@ import {
   Text,
   Animated,
   Dimensions,
-  Platform
+  Platform,
+  I18nManager
 } from 'react-native';
 import PropTypes from 'prop-types';
 import {
@@ -144,7 +145,13 @@ class Tab extends Component {
         headerItems.push(
           <TouchableWithoutFeedback
             key={i}
-            onPress={() => { this.onHeaderItemPress(i) }}
+            onPress={() => {
+              if (this.props.children[i].props.onPress && this.props.children[i].props.onPress !== null) {
+                this.props.children[i].props.onPress();
+              } else {
+                this.onHeaderItemPress(i)
+              }
+            }}
           >
             <Animated.View
               style={[stylesNormal.headerItem, { opacity }]}
@@ -236,28 +243,54 @@ class Tab extends Component {
   renderTabMains() {
     let tabMainItems = [];
     let stylesScrollItem = null;
-    if (this.props.reverse) {
-      stylesScrollItem = { transform: [{scaleX: -1}] };
+
+    // for i18n manager, if not work, remove it
+    if (I18nManager.isRTL) {
+      if (!this.props.reverse) {
+        stylesScrollItem = { transform: [{scaleX: -1}] };
+      }
+    } else {
+      if (this.props.reverse) {
+        stylesScrollItem = { transform: [{scaleX: -1}] };
+      }
     }
+    // if (this.props.reverse) {
+    //   stylesScrollItem = { transform: [{scaleX: -1}] };
+    // }
 
     for (let i = 0; i < this.props.children.length; i++) {
-      tabMainItems.push(
-        <View
-          key={i}
-          style={[styles.scrollItem, stylesScrollItem]}
-        >
-          {this.props.children[i]}
-        </View>
-      );
+      if (this.props.children[i].props.onPress && this.props.children[i].props.onPress !== null) {
+        // do nothing
+      } else {
+        tabMainItems.push(
+          <View
+            key={i}
+            style={[styles.scrollItem, stylesScrollItem]}
+          >
+            {this.props.children[i]}
+          </View>
+        );
+      }
     }
     return tabMainItems;
   }
 
   renderScroll() {
     let stylesScroll = null;
-    if (this.props.reverse) {
-      stylesScroll = { transform: [{scaleX: -1}] };
+
+    // for i18n manager, if not work, remove it
+    if (I18nManager.isRTL) {
+      if (!this.props.reverse) {
+        stylesScroll = { transform: [{scaleX: -1}] };
+      }
+    } else {
+      if (this.props.reverse) {
+        stylesScroll = { transform: [{scaleX: -1}] };
+      }
     }
+    // if (this.props.reverse) {
+    //   stylesScroll = { transform: [{scaleX: -1}] };
+    // }
 
     if (Platform.OS === 'ios') {
       return (

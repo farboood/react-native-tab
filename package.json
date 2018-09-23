@@ -1,6 +1,6 @@
 {
   "name": "@farbod_/react-native-tab",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "React Native Tab Component",
   "main": "index.js",
   "scripts": {

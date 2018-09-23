@@ -1,14 +1,14 @@
 # React Native Tab
 
 <!-- [![NPM Version](https://badge.fury.io/js/esta.svg?style=flat)](https://npmjs.org/package/@feri/react-native-tab) -->
-[![NPM Version](0.1.1)
+[![NPM Version](0.3.0)
 
 Tab Component for React-Native (android & ios)
 
 ### Installation
 
 ```
-$ npm install --save @feri/react-native-tab
+$ npm install --save @farbod_/react-native-tab
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ import {
   Text,
   StyleSheet
 } from 'react-native';
-import Tab from '@feriz/react-native-tab';
+import Tab from '@farbod_/react-native-tab';
 
 export default class App extends Component {
   render() {
@@ -82,7 +82,7 @@ mode="normal"
 
 <a href="https://raw.githubusercontent.com/farbd-dev/react-native-tab/master/demo/tabNormal.mp4"><img src="https://raw.githubusercontent.com/farbod-dev/react-native-tab/master/demo/tabNormal.gif" width="360"></a>
 
-### Props
+### Tab Props
 
 | Prop            | Values           | Action                                   |
 | --------------- |:----------------:| ----------------------------------------:|
@@ -92,3 +92,10 @@ mode="normal"
 | rollStyle       | style object     | extra styles for tab buttons roll        |
 | mode            | normal, scroll   | make tab buttons static or scrollable    |
 | reverse         | true, false      | direction of tab Buttons and Views       |
+
+### View Props
+
+| Prop            | Values           | Action                                                                 |
+| --------------- |:----------------:| ----------------------------------------------------------------------:|
+| name            | string           | show name of tab                                                       |
+| onPress         | function         | action we need accur when click on tab (body not render for this view) |
